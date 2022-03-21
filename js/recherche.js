@@ -95,9 +95,7 @@ nexts.forEach((next) => {
 // function assemble l'url et affiche le contenue dans le main
 function fetchMovie(page) {
   movieslist.innerHTML = "";
-  let fetchUrl = page
-    ? url + recherche.value + `&page=${page}` + APIKEY
-    : url + recherche.value + APIKEY;
+  let fetchUrl = url + recherche.value + `&page=${page}` + APIKEY
 
   fetch(fetchUrl)
     .then((res) => res.json())
@@ -125,7 +123,8 @@ function fetchMovie(page) {
 
         failImage.src = "https://c.tenor.com/b9k82qg9_NAAAAAd/sonic-dance.gif";
         fail.innerText =
-          "domage petit apprend tes nom de film et on verra plus tard";
+          "Domage petit apprend tes noms de film et on verra plus tard !";
+        fail.classList.add("textFail");
 
         failcontent.style.gridColumn = 3;
 
